@@ -30,15 +30,10 @@ def predict():
         Restecg = int(request.form['restecg'])
         Thalach = int(request.form['thalach'])
         Exang = int(request.form['exang'])
-
         Oldpeak=float(request.form['oldpeak'])
-        
-        
         Slope=int(request.form['slope'])
         Ca=int(request.form['slope'])
         Thal=int(request.form['slope'])
-
-
         Prediction=model.predict([[Present_Price,Kms_Driven2,Owner,Year,Fuel_Type_Diesel,Fuel_Type_Petrol,Seller_Type_Individual,Transmission_Mannual]])
         Output=round(prediction[0],2)
         If output==0:
