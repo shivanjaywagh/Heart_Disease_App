@@ -17,7 +17,7 @@ def Home():
 def predict():
     if request.method == 'POST':
         Age = int(request.form['Age'])
-        Gender=request.form['sex']
+        Gender=request.form['Gender']
         if(Gender=='Male'):
             Gender=1
         else:
@@ -33,7 +33,7 @@ def predict():
         Slope=int(request.form['slope'])
         Ca=int(request.form['slope'])
         Thal=int(request.form['slope'])
-        Prediction=model.predict([[Present_Price,Kms_Driven2,Owner,Year,Fuel_Type_Diesel,Fuel_Type_Petrol,Seller_Type_Individual,Transmission_Mannual]])
+        prediction=model.predict([[Age,Gender,Cp,Tresttbps,Chol,Fbs,Restecg,Thalach,Exang,Oldpeak,Slope,Ca,Thal]])
         output=round(prediction[0],2)
         If output==0:
             return render_template('index.html',prediction_text="Patient does not have heart disease")
