@@ -37,7 +37,7 @@ def predict():
         output=round(prediction[0],2)
         If output==0:
             return render_template('index.html',prediction_text="Patient does not have heart disease")
-        else:
+        elif output==1:
             return render_template('index.html',prediction_text="Patient probably has heart disease")
     else:
         return render_template('index.html')
