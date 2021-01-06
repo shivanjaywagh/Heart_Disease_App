@@ -31,9 +31,9 @@ def predict():
         Exang = int(request.form['exang'])
         Oldpeak=float(request.form['oldpeak'])
         Slope=int(request.form['slope'])
-        Ca=int(request.form['slope'])
-        Thal=int(request.form['slope'])
-        prediction=model.predict([[Age,Gender,Cp,Tresttbps,Chol,Fbs,Restecg,Thalach,Exang,Oldpeak,Slope,Ca,Thal]])
+        Ca=int(request.form['ca'])
+        Thal=int(request.form['thal'])
+        prediction=model.predict([[Age,Gender,Cp,Trestbps,Chol,Fbs,Restecg,Thalach,Exang,Oldpeak,Slope,Ca,Thal]])
         output=prediction
         If output==0:
             return render_template('index.html',prediction_texts="Patient does not have heart disease")
