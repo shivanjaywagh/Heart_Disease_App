@@ -18,7 +18,7 @@ def Home():
 def predict():
     if request.method == 'POST':
         Age = int(request.form['Age'])
-        Gender=request.form['sex']
+        Gender=request.form['Gender']
         if(Gender=='Male'):
             Gender=1
         else:
@@ -32,9 +32,9 @@ def predict():
         Exang = int(request.form['exang'])
         Oldpeak=float(request.form['oldpeak'])
         Slope=int(request.form['slope'])
-        Ca=int(request.form['slope'])
-        Thal=int(request.form['slope'])
-        prediction=model.predict([[Age,sex,cp,tresttbps,chol,fbs,restecg,thalach,exang,oldpeak,slope,ca,thal]])
+        Ca=int(request.form['ca'])
+        Thal=int(request.form['thal'])
+        prediction=model.predict([[Age,Gender,Cp,Tresttbps,Chol,Fbs,Restecg,Thalach,Exang,Oldpeak,Slope,Ca,Thal]])
         output=round(prediction[0],2)
         if output==0:
             return render_template('index.html',prediction_text="Patient does not have heart disease")
