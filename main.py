@@ -36,7 +36,7 @@ def predict():
         prediction=model.predict([[Age,Gender,Cp,Tresttbps,Chol,Fbs,Restecg,Thalach,Exang,Oldpeak,Slope,Ca,Thal]])
         output=prediction
         If output==0:
-            return render_template('index.html',prediction_text="Patient does not have heart disease")
+            return render_template('index.html',prediction_texts="Patient does not have heart disease")
         elif output==1:
             return render_template('index.html',prediction_text="Patient probably has heart disease")
     else:
