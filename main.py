@@ -34,7 +34,7 @@ def predict():
         Ca=int(request.form['slope'])
         Thal=int(request.form['slope'])
         prediction=model.predict([[Age,Gender,Cp,Tresttbps,Chol,Fbs,Restecg,Thalach,Exang,Oldpeak,Slope,Ca,Thal]])
-        output=round(prediction[0],2)
+        output=prediction
         If output==0:
             return render_template('index.html',prediction_text="Patient does not have heart disease")
         elif output==1:
