@@ -23,28 +23,28 @@ def predict():
             Gender=1
         else:
             Gender=0    
-        cp = int(request.form['cp'])
-        trestbps = int(request.form['trestbps'])
-        chol = int(request.form['chol'])
-        fbs = int(request.form['fbs'])
-        restecg = int(request.form['restecg'])
-        thalach = int(request.form['thalach'])
-        exang = int(request.form['exang'])
+        Cp = int(request.form['cp'])
+        Trestbps = int(request.form['trestbps'])
+        Chol = int(request.form['chol'])
+        Fbs = int(request.form['fbs'])
+        Restecg = int(request.form['restecg'])
+        Thalach = int(request.form['thalach'])
+        Exang = int(request.form['exang'])
 
-        oldpeak=float(request.form['oldpeak'])
+        Oldpeak=float(request.form['oldpeak'])
         
         
-        slope=int(request.form['slope'])
-        ca=int(request.form['slope'])
-        thal=int(request.form['slope'])
+        Slope=int(request.form['slope'])
+        Ca=int(request.form['slope'])
+        Thal=int(request.form['slope'])
 
 
-        prediction=model.predict([[Present_Price,Kms_Driven2,Owner,Year,Fuel_Type_Diesel,Fuel_Type_Petrol,Seller_Type_Individual,Transmission_Mannual]])
-        output=round(prediction[0],2)
-        if output<0:
-            return render_template('index.html',prediction_texts="Sorry you cannot sell this car")
+        Prediction=model.predict([[Present_Price,Kms_Driven2,Owner,Year,Fuel_Type_Diesel,Fuel_Type_Petrol,Seller_Type_Individual,Transmission_Mannual]])
+        Output=round(prediction[0],2)
+        If output==0:
+            return render_template('index.html',prediction_text="Patient does not have heart disease")
         else:
-            return render_template('index.html',prediction_text="You Can Sell The Car at {}".format(output))
+            return render_template('index.html',prediction_text="Patient probably has heart disease")
     else:
         return render_template('index.html')
 
