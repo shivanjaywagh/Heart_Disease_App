@@ -23,20 +23,20 @@ def predict():
             Gender=1
         else:
             Gender=0	
-        cp = int(request.form['cp'])
-        trestbps = int(request.form['trestbps'])
-        chol = int(request.form['chol'])
-        fbs = int(request.form['fbs'])
-        restecg = int(request.form['restecg'])
-        thalach = int(request.form['thalach'])
-        exang = int(request.form['exang'])
+        Cp = int(request.form['cp'])
+        Trestbps = int(request.form['trestbps'])
+        Chol = int(request.form['chol'])
+        Fbs = int(request.form['fbs'])
+        Restecg = int(request.form['restecg'])
+        Thalach = int(request.form['thalach'])
+        Exang = int(request.form['exang'])
 
-        oldpeak=float(request.form['oldpeak'])
+        Oldpeak=float(request.form['oldpeak'])
         
         
-        slope=int(request.form['slope'])
-        ca=int(request.form['slope'])
-        thal=int(request.form['slope'])
+        Slope=int(request.form['slope'])
+        Ca=int(request.form['slope'])
+        Thal=int(request.form['slope'])
         
         #Kms_Driven2=np.log(Kms_Driven)
         #Owner=int(request.form['Owner'])
