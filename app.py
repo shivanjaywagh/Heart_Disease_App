@@ -16,7 +16,6 @@ def Home():
 #standard_to = StandardScaler()
 @app.route("/predict", methods=['POST'])
 def predict():
-    #Fuel_Type_Diesel=0
     if request.method == 'POST':
         Age = int(request.form['Age'])
         Gender=request.form['sex']
@@ -35,7 +34,7 @@ def predict():
         Slope=int(request.form['slope'])
         Ca=int(request.form['slope'])
         Thal=int(request.form['slope'])
-        prediction=model.predict([[Age,sex,cp,tresttbps,chol,fbs,restecg,thalach,exang,oldspeak,slope,ca,thal]])
+        prediction=model.predict([[Age,sex,cp,tresttbps,chol,fbs,restecg,thalach,exang,oldpeak,slope,ca,thal]])
         output=round(prediction[0],2)
         if output==0:
             return render_template('index.html',prediction_text="Patient does not have heart disease")
